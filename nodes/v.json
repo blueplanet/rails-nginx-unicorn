@@ -1,6 +1,7 @@
 {
   "run_list": [
-    "base"
+    "base",
+    "ruby"
   ],
   "automatic": {
     "ipaddress": "v"
