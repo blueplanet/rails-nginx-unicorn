@@ -1,1 +1,3 @@
-site :opscode
+source "https://supermarket.chef.io"
+
+cookbook 'yum-epel'

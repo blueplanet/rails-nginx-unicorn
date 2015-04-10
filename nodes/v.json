@@ -1,7 +1,9 @@
 {
   "run_list": [
     "base",
-    "ruby"
+    "ruby",
+    "yum-epel",
+    "nginx"
   ],
   "automatic": {
     "ipaddress": "v"
