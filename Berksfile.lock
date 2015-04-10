@@ -1,7 +1,12 @@
 DEPENDENCIES
+  mysql (~> 5.3.6)
   yum-epel
 
 GRAPH
+  mysql (5.3.6)
+    yum-mysql-community (>= 0.0.0)
   yum (3.5.4)
   yum-epel (0.6.0)
     yum (~> 3.0)
+  yum-mysql-community (0.1.17)
+    yum (>= 3.0)

@@ -1,9 +1,19 @@
 {
+  "mysql" : {
+    "service_name": "default",
+    "version": "5.6",
+    "port": "3306",
+    "server_root_password": "vagrant",
+    "remove_anonymous_users": true,
+    "remove_test_database": true
+  },
   "run_list": [
     "base",
     "ruby",
     "yum-epel",
-    "nginx"
+    "nginx",
+    "mysql::server",
+    "mysql::client"
   ],
   "automatic": {
     "ipaddress": "v"
