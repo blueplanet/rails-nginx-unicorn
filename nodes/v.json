@@ -13,7 +13,8 @@
     "yum-epel",
     "nginx",
     "mysql::server",
-    "mysql::client"
+    "mysql::client",
+    "deploy_env"
   ],
   "automatic": {
     "ipaddress": "v"
