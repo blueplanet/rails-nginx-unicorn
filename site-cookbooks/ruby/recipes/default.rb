@@ -51,6 +51,8 @@ execute 'ruby change' do
   action :run
 end
 
-gem_package 'bundler' do
-  action :upgrade
+execute 'install bundler' do
+  user 'root'
+  command 'source /etc/profile.d/rbenv.sh; gem install bundler; rbenv rehash'
+  action :run
 end
