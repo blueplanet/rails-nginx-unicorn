@@ -22,3 +22,8 @@ template '/etc/nginx/conf.d/sample.conf' do
   mode 0644
   notifies :reload , 'service[nginx]'
 end
+
+file '/etc/nginx/conf.d/default.conf' do
+  action :delete
+  user 'root'
+end
