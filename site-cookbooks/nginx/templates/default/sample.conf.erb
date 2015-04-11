@@ -6,13 +6,12 @@ upstream unicorn_server {
 server {
   listen 80;
   client_max_body_size 4G;
-  #server_name _; ドメイン未登録
 
   keepalive_timeout 5;
 
-  root /var/www/myApp/public;
-  access_log /var/log/nginx/myApp_access.log;
-  error_log /var/log/nginx/myApp_error.log;
+  root /var/www/blog/public;
+  access_log /var/log/nginx/blog_access.log;
+  error_log /var/log/nginx/blog_error.log;
 
   error_page 500 502 503 504 /500.html;
 
@@ -26,11 +25,11 @@ server {
   }
 
   location ~ ^/assets/ {
-    root /var/www/myApp/current/public;
+    root /var/www/blog/current/public;
   }
 
   error_page 500 502 503 504 /500.html;
   location = /500.html {
-    root /var/www/myApp/current/public;
+    root /var/www/blog/current/public;
   }
 }
