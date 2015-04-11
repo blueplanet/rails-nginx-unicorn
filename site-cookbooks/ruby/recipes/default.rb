@@ -7,6 +7,8 @@
 # All rights reserved - Do Not Redistribute
 #
 
+ruby_version = node['ruby']['version']
+
 group 'rbenv' do
   action :create
   members 'vagrant'
@@ -40,14 +42,14 @@ template '/etc/profile.d/rbenv.sh' do
   mode 0644
 end
 
-execute "install ruby 2.2.1" do
-  not_if 'source /etc/profile.d/rbenv.sh; rbenv versions | grep 2.2.1'
-  command 'source /etc/profile.d/rbenv.sh; rbenv install 2.2.1'
+execute "install ruby #{ruby_version}" do
+  not_if "source /etc/profile.d/rbenv.sh; rbenv versions | grep #{ruby_version}"
+  command "source /etc/profile.d/rbenv.sh; rbenv install #{ruby_version}"
   action :run
 end
 
 execute 'ruby change' do
-  command 'source /etc/profile.d/rbenv.sh; rbenv global 2.2.1; rbenv rehash'
+  command "source /etc/profile.d/rbenv.sh; rbenv global #{ruby_version}; rbenv rehash"
   action :run
 end
 
