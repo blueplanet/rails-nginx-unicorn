@@ -15,8 +15,5 @@
     "mysql::server",
     "mysql::client",
     "deploy_env"
-  ],
-  "automatic": {
-    "ipaddress": "v"
-  }
+  ]
 }
